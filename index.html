@@ -123,6 +123,167 @@
       <div class="viewmore">
       <a href="viewmore.html"> <button id="viewmore">READ MORE....</button></a>
     </div>
+    <style>
+      .containerZ {
+          background-image: url(image.png) ;
+          background-repeat: no-repeat;
+          background-size: cover;
+          border: 2px solid black;
+          display: flex;
+          overflow: scroll;
+          
+      }
+
+      .developer {
+          margin: 20px;
+          cursor: pointer;
+          flex-wrap: wrap;
+      }
+
+      .profession {
+          text-align: center;
+          font-weight: bold;
+          color: aliceblue;
+      }
+
+      .containerZ img {
+          width: 150px;
+          /* Adjust according to your passport size requirements */
+          height: 150px;
+          /* Adjust according to your passport size requirements */
+          object-fit: cover;
+          margin: 5px;
+          /* Adjust margin as needed */
+        
+
+      }
+
+      .details {
+          background-color: rgb(122, 199, 199);
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          display: none;
+          
+      }
+      #h1{
+          font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+  </style>
+</head>
+
+<body>
+  <h1 id="h1">OUR DEVELOPERS</h1>
+  <div class="containerZ">
+      <div class="developer" id="dev1">
+          <img src="profilrpic.jpg" alt="Developer 1" width="150">
+          <p class="profession">Frontend Developer<br>SHIVAM MALVIYA</p>
+      </div>
+
+      <div class="developer" id="dev2">
+          <img src="shital.jpg" alt="Developer 2" width="150">
+          <p class="profession">Frontend Developer <br>SHITAL GOKHE</p>
+      </div>
+      <div class="developer" id="dev3">
+          <img src="rohit.jpg" alt="Developer 2" width="150">
+          <p class="profession">Backend Developer<br>ROHIT MEWADA</p>
+      </div>
+      <div class="developer" id="dev4">
+          <img src="empty.jpg" alt="Developer 2" width="150">
+          <p class="profession">Frontend Developer<br>DINESH VERMA</p>
+      </div>
+      <div class="developer" id="dev5">
+          <img src="aman.jpg" alt="Developer 2" width="150">
+          <p class="profession">Frontend Developer<br>AMAN DEHARIYA</p>
+      </div>
+
+  </div>
+  <div class="details" id="details">
+      <!-- Details will be populated using JavaScript -->
+  </div>
+  <script>
+      const developers = [
+          {
+              id: "dev1",
+              name: "SHIVAM MALVIYA",
+              profession: "Frontend Developer",
+              details: "SHIVAM is an web developer with knowledge in HTML, CSS, and JavaScript.",
+              socialMedia: {
+                  linkedIn: "https://www.linkedin.com/in/shivam-malviya-499070303/",
+                 
+              }
+          },
+          {
+              id: "dev2",
+              name: "SHITAL GOKHE",
+              profession: "Frontend Developer",
+              details: "SHITAL is a developer sknowledge in wev development.",
+              socialMedia: {
+                  linkedIn: "https://www.linkedin.com/in/shital-gokhe-6032a2304/",
+                 
+              }
+          },
+          {
+              id: "dev3",
+              name: "ROHIT MEWADA",
+              profession: "Backend developer",
+              details: "ROHIT is a engineering student  specializing in backend development.",
+              socialMedia: {
+                  linkedIn: "https://www.linkedin.com/in/rohit-mewada-b29457286/",
+                  
+              }
+          },
+          {
+              id: "dev4",
+              name: "DINESH VERMA",
+              socialMedia: {
+                  linkedIn: "https://www.linkedin.com/in/janesmith",
+                  github: "https://github.com/janesmith"
+              }
+          },
+          {
+              id: "dev5",
+              name: "AMAN DEHARIYA",
+              socialMedia: {
+                  linkedIn: "https://www.linkedin.com/in/janesmith",
+                  github: "https://github.com/janesmith"
+              }
+          }
+
+      ];
+
+      const detailsContainer = document.getElementById("details");
+
+      developers.forEach(developer => {
+          const developerElement = document.getElementById(developer.id);
+          developerElement.addEventListener("click", () => {
+              const detailsHTML = `
+        <h2>${developer.name}</h2>
+        <p>${developer.details}</p>
+        <p>Connect with ${developer.name}:</p>
+        <ul>
+          <li><a href="${developer.socialMedia.linkedIn}" target="_blank">LinkedIn</a></li>
+          <li><a href="${developer.socialMedia.twitter}" target="_blank">Twitter</a></li>
+          <!-- Add more social media links here -->
+        </ul>
+      `;
+              detailsContainer.innerHTML = detailsHTML;
+              detailsContainer.style.display = "block";
+          });
+      });
+
+      // Close details on outside click
+      window.addEventListener("click", (event) => {
+          if (event.target === detailsContainer) {
+              detailsContainer.style.display = "none";
+          }
+      });
+  </script>
+  </body>
 	 <footer>
       
       <h3>CYBER CRIME HELPLINE NO :1930</h3>
